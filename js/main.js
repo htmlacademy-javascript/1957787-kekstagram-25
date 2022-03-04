@@ -15,3 +15,9 @@ function maxLenStr(str, maxLen)
 
 maxLenStr('Hello', 140);
 
+
+function stringLength (stringComment, maxLenght) {
+  return stringComment.length > maxLenght;
+}
+
+stringLength('', maxLenStr);
