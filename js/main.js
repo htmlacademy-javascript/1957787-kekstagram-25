@@ -1,23 +1,16 @@
-function randomNumber(from, to)
-{
-  if (from < 0 || to <= from) {
-    throw new Error('Ошибка, некорректный диапазон');
-  }
-  return Math.floor(Math.random() * (to - from + 1) + from);
+function getRandomPositiveInteger (a, b) {
+
+  const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
+  const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
+
+  const result = Math.random() * (upper - lower + 1) + lower;
+
+  return Math.floor(result);
 }
 
-randomNumber(1, 5);
-
-function maxLenStr(str, maxLen)
-{
-  return str.length <= maxLen;
+function checkStringLength (string, length) {
+  return string.length <= length;
 }
 
-maxLenStr('Hello', 140);
-
-
-function stringLength (stringComment, maxLenght) {
-  return stringComment.length > maxLenght;
-}
-
-stringLength('', maxLenStr);
+getRandomPositiveInteger(1, 10);
+checkStringLength('Hello', 10);
