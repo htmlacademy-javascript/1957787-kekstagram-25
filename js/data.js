@@ -85,3 +85,8 @@ export default function generatePosts(countPost) {
   }
   return posts;
 }
+const MAX_OBJECTS = 25;
+const multipleObject = () => Array.from({ length: MAX_OBJECTS }, generatePosts);
+
+
+export { multipleObject };
