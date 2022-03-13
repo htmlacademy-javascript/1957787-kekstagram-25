@@ -4,15 +4,15 @@ const photos = multipleObject();
 
 const containerPhotos = document.querySelector('.pictures');
 const templateWrapper = document.querySelector('#picture');
-const template = templateWrapper.querySelector('a');
+const template = templateWrapper.content.querySelector('.picture');
 const fragment = document.createDocumentFragment();
 
 photos.forEach((photo) => {
-  const a = template.cloneNode(true);
-  a.querySelector('.picture__img').src = photo.url;
-  a.querySelector('.picture__comments').textContent = photo.comments.length;
-  a.querySelector('.picture__likes').textContent = photo.likes;
-  fragment.appendChild(a);
+  const newPhoto = template.cloneNode(true);
+  newPhoto.querySelector('.picture__img').src = photo.url;
+  newPhoto.querySelector('.picture__comments').textContent = photo.comments.length;
+  newPhoto.querySelector('.picture__likes').textContent = photo.likes;
+  fragment.appendChild(newPhoto);
 });
 
 containerPhotos.appendChild(fragment);
