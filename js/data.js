@@ -47,6 +47,8 @@ const MAX_LIKES = 200;
 const MIN_AVATAR_ID = 1;
 const MAX_AVATAR_ID = 6;
 
+const MAX_OBJECTS = 25;
+
 const uniqueID = (function() {
   let id = 0;
   return function() { return id++; };
@@ -72,10 +74,10 @@ function createComments(countComments) {
   return comments;
 }
 
-export default function generatePosts(countPost) {
-  const posts = [];
-  for (let i = 0; i < countPost; i++) {
-    posts.push({
+function generatePhotos(countPhoto) {
+  const photos = [];
+  for (let i = 0; i < countPhoto; i++) {
+    photos.push({
       id: i + 1,
       url: `photos/${i + 1}.jpg`,
       description: getRandomArrayElement(DESCRIPTIONS),
@@ -83,5 +85,9 @@ export default function generatePosts(countPost) {
       comments: createComments(getRandomPositiveInteger(1, 4))
     });
   }
-  return posts;
+  return photos;
 }
+
+const multipleObject = () => generatePhotos(MAX_OBJECTS);
+
+export { multipleObject };

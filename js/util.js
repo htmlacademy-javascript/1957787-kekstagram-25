@@ -16,4 +16,4 @@ function getRandomArrayElement(ARR) {
   return ARR[getRandomPositiveInteger(0, ARR.length-1)];
 }
 
-export {getRandomArrayElement, getRandomPositiveInteger};
+export {getRandomArrayElement, getRandomPositiveInteger, maxLenStr}; //дописал MaxLenStr
